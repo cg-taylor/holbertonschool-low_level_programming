@@ -13,5 +13,5 @@ int main(void)
 
 	write(2, str, buf);
 
-	return (0);
+	return (1);
 }
