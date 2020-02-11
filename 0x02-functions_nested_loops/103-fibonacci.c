@@ -18,7 +18,6 @@ int main(void)
 	{
 		if (num2 % 2 == 0)
 		{
-			printf("%ld + \n", num2);
 			sum += num2;
 		}
 
