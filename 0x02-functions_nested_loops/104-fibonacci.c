@@ -15,14 +15,14 @@ int main(void)
 	num1 = 1;
 	num2 = 2;
 
-	printf("%.f, ", num1);
+	printf("%.f, ", count, num1);
 
-	for ( ; count < 98; count++)
+	for (count = 2 ; count < 99; count++)
 	{
-		if (count != 97)
-			printf("%.f, ", num2);
+		if (count != 98)
+			printf("%.f, ", count,  num2);
 		else
-			printf("%.f\n", num2);
+			printf("%.f\n", count, num2);
 
 		temp = num2;
 		num2 += num1;
