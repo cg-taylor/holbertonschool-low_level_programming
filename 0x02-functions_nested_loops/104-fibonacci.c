@@ -20,7 +20,7 @@ int main(void)
 
 	for (idx = 3; idx < 99; idx++)
 	{
-	       	total = a + b;
+		total = a + b;
 
 		if (total < cutoff && !cut)
 		{
