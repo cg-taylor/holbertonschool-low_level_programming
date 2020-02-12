@@ -9,26 +9,43 @@
 
 int main(void)
 {
-	float num1, num2, temp;
-	int count = 1;
+	unsigned long a, b, total = 0, a2 = 0, b2 = 0, total2 = 0;
+	unsigned long cutoff = 10000000000000000;
+	int cut = 0, idx;
 
-	num1 = 1;
-	num2 = 2;
+	a = 1;
+	b = 2;
 
-	printf("%.f, ", num1);
+	printf("%lu, %lu, ", a, b);
 
-	for (count = 2 ; count < 99; count++)
+	for (idx = 3; idx < 99; idx++)
 	{
-		if (count != 98)
-			printf("%.f, ", num2);
+	       	total = a + b;
+
+		if (total < cutoff && !cut)
+		{
+			printf("%lu", total);
+
+			a = b;
+			b = total;
+		}
 		else
-			printf("%.f\n", num2);
+			cut = 1;
 
-		temp = num2;
-		num2 += num1;
-		num1 = temp;
+		if (cut)
+		{
+			total2 = total / cutoff + a2 + b2;
+			total %= cutoff;
+			a2 = b2;
+			b2 = total2;
+			a = b;
+			b = total;
+
+			printf("%lu%016lu", total2, total);
+		}
+		if (idx < 98)
+			printf(", ");
 	}
-
 	putchar('\n');
 
 	return (0);
