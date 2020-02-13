@@ -7,7 +7,7 @@
  * Return: 1 if `c` is a digit, 0 if not
  */
 
-int _isupper(int c)
+int _isdigit(int c)
 {
 	int check;
 
