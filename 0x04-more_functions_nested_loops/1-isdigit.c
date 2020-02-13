@@ -15,8 +15,6 @@ int _isupper(int c)
 	{
 		if (c == check)
 			return (1);
-		else
-			continue;
 	}
 
 	return (0);

@@ -10,6 +10,7 @@
 void print_triangle(int size)
 {
 	int num_space, num_char, total, idx;
+
 	num_char = 1;
 
 	if (size <= 0)
