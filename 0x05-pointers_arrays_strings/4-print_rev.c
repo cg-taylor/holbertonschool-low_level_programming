@@ -27,17 +27,15 @@ int _strlen(char *s)
 void print_rev(char *s)
 {
 	int length;
-	char *temp = s;
 
-	length = _strlen(s);
-
-	while (*temp++)
-		;
+/* Remove one from length because otherwise it would start printing from the
+ * null byte
+ */
+	length = _strlen(s) - 1;
 
 	while (length >= 0)
 	{
-		temp--;
-		_putchar(*temp);
+		_putchar(*(s + length));
 		length--;
 	}
 	_putchar('\n');
