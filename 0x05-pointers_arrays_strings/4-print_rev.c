@@ -28,7 +28,8 @@ void print_rev(char *s)
 {
 	int length;
 
-/* Remove one from length because otherwise it would start printing from the
+/*
+ * Remove one from length because otherwise it would start printing from the
  * null byte
  */
 	length = _strlen(s) - 1;
