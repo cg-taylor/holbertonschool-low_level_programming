@@ -28,13 +28,13 @@ void puts_half(char *str)
 {
 	int length;
 
-	length = _strlen(str);
-
-	if (*str == '\0')
+	if (!(str) || !(*str))
 	{
 		_putchar('\n');
 		return;
 	}
+
+	length = _strlen(str);
 
 	if (!(length % 2))
 		length = length / 2;
