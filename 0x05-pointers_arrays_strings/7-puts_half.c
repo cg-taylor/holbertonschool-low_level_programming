@@ -30,6 +30,12 @@ void puts_half(char *str)
 
 	length = _strlen(str);
 
+	if (*str == '\0')
+	{
+		_putchar('\n');
+		return;
+	}
+
 	if (!(length % 2))
 		length = length / 2;
 	else
