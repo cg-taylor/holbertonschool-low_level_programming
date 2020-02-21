@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stddef.h>
 
 /**
  * cap_string - capitalize every word in a string
@@ -12,7 +13,10 @@ char *cap_string(char *str)
 	char *separator = ",;.!?\"(){} \t\n";
 	int i, j;
 
-       	for (i = 0; str[i]; i++)
+	if (!str)
+		return (NULL);
+
+	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; separator[j]; j++)
 		{
