@@ -31,7 +31,7 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int idx, length, max;
 
-	if (!src)
+/*	if (!src)
 	{
 		return (NULL);
 	}
@@ -40,7 +40,7 @@ char *_strncpy(char *dest, char *src, int n)
 		dest = src;
 		return (dest);
 	}
-
+*/
 	length = _strlen(src);
 	max = _strlen(dest);
 
