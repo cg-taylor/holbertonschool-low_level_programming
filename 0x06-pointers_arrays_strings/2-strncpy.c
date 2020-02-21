@@ -31,32 +31,19 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	int idx, length, max;
 
-/*	if (!src)
-	{
-		return (NULL);
-	}
-	else if (!dest)
-	{
-		dest = src;
-		return (dest);
-	}
-*/
 	length = _strlen(src);
-	max = _strlen(dest);
 
-	if (n > max)
-		n = max;
+	if (n > length)
+		max = length;
+	else
+		max = n;
 
-	for (idx = 0; idx < n; idx++)
-	{
-		if (idx >= length)
-			dest[idx] = '\0';
-		else
-			dest[idx] = src[idx];
-	}
-
-	if (n <= length)
+	for (idx = 0; idx < max; idx++)
 		dest[idx] = src[idx];
+
+	if (n > length)
+		for (idx = length; idx < n; idx++)
+			dest[idx] = '\0';
 
 	return (dest);
 }
