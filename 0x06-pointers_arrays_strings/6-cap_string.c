@@ -5,12 +5,15 @@
  * cap_string - capitalize every word in a string
  * @str: pointer to the string to modify
  *
+ * Description: The following characters are considered separators>
+ * <space> <tab> <newline> , ; . ? " ( ) { }
+ *
  * Return: pointer to the modified string
  */
 
 char *cap_string(char *str)
 {
-	char *separator = ",;.!?\"(){} \t\n";
+	char *sep = ",;.!?\"(){} \t\n";
 	int i, j;
 
 	if (!str)
@@ -18,19 +21,17 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i]; i++)
 	{
-		for (j = 0; separator[j]; j++)
+		j = 0;
+
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
-			if (str[i] == separator[j])
-			{
-				i++;
-				if (str[i] >= 'a' && str[i] <= 'z')
-					str[i] -= 32;
-			}
+			if (i)
+				for (j = 0; sep[j] && sep[j] != str[i - 1]; j++)
+					;
+			if (sep[j])
+				str[i] -= ('a' - 'A');
 		}
 	}
-
-	if (str[0] >= 'a' && str[0] <= 'z')
-		str[0] -= 32;
 
 	return (str);
 }
