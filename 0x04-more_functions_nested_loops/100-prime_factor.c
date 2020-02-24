@@ -32,7 +32,7 @@ long find_prime(long num, long max)
 /**
  * main - print the largest prime factor of a number
  *
- * Return: Always 1
+ * Return: Always 0
  */
 
 int main(void)
