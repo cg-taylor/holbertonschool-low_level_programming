@@ -22,7 +22,7 @@ char *_strstr(char *haystack, char *needle)
 		if (*haystack == *needle)
 		{
 			found = haystack;
-			for (idx = 0; *(needle + idx) && *haystack; idx++, haystack++)
+			for (idx = 0; *(needle + idx) /*&& *haystack*/; idx++, haystack++)
 			{
 				if (*haystack != *(needle + idx))
 				{
