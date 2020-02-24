@@ -42,7 +42,7 @@ int rightToLeft(int *a, int size)
 }
 
 /**
- * print_diagsums - print the sums of the diagonals of a square matrix of integers
+ * print_diagsums - print the sums of the diagonals of a square matrix
  * @a: pointer to the 2D array of integers
  * @size: the size of the array
  *
