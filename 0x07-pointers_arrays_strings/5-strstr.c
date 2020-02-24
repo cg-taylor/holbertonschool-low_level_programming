@@ -14,6 +14,9 @@ char *_strstr(char *haystack, char *needle)
 	char *found = NULL;
 	int idx;
 
+	if (!*haystack || !*needle)
+		return (NULL);
+
 	for ( ; *haystack; haystack++)
 	{
 		if (*haystack == *needle)
