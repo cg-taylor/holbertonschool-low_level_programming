@@ -12,32 +12,26 @@
 char *_strstr(char *haystack, char *needle)
 {
 	char *found, *str, *substr;
-	int flag = 0;
 
 	if (!*needle)
 		return (NULL);
 
-	for (str = haystack; *str; str++)
-	{
-		if (*str == *needle)
-		{
-			found = str;
-			flag = 1;
+	do {
+		str = haystack;
+		substr = needle;
+		do {
+			if (!*substr)
+				return (haystack);
+			if (!*str)
+				return (NULL);
 
-			for (substr = needle; *substr; substr++, str++)
-			{
-				if (*str != *substr)
-				{
-					flag = 0;
-					break;
-				}
-			}
-			if (!*substr && flag)
-				return (found);
-		}
-	}
+			substr++;
+			str++;
+		} while (*str == *substr);
 
-	if (!flag)
-		return (NULL);
-	return (found);
+		haystack++;
+
+	} while (*haystack);
+
+	return (NULL);
 }
