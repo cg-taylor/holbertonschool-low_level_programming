@@ -11,29 +11,30 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	char *found = NULL;
-	int idx;
+	char *found, *str, *substr;
+	int flag = 0;
 
-	if (!haystack || !needle)
-		return (NULL);
-
-	for ( ; *haystack; haystack++)
+	for (str = haystack; *str; str++)
 	{
-		if (*haystack == *needle)
+		if (*str == *needle)
 		{
-			found = haystack;
-			for (idx = 0; *(needle + idx) && *haystack; idx++, haystack++)
+			found = str;
+			flag = 1;
+
+			for (substr = needle; *substr; substr++, str++)
 			{
-				if (*haystack != *(needle + idx))
+				if (*str != *substr)
 				{
-					found = NULL;
+					flag = 0;
 					break;
 				}
 			}
-			if (*(needle + idx) == '\0' && found)
+			if (!*substr && flag)
 				return (found);
 		}
 	}
 
-	return (NULL);
+	if (!flag)
+		return (NULL);
+	return (found);
 }
