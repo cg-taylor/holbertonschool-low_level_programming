@@ -11,7 +11,7 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	char *found, *str, *substr;
+	char *str, *substr;
 
 	if (!*needle)
 		return (NULL);
