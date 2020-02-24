@@ -26,10 +26,11 @@ char *_strstr(char *haystack, char *needle)
 			{
 				if (*haystack != *(needle + idx))
 				{
+					found = NULL;
 					break;
 				}
 			}
-			if (!*(needle + idx))
+			if (*(needle + idx) == '\0' && found)
 				return (found);
 		}
 	}
