@@ -13,9 +13,6 @@ char *_strstr(char *haystack, char *needle)
 {
 	char *str, *substr;
 
-	if (!*needle)
-		return (NULL);
-
 	do {
 		str = haystack;
 		substr = needle;
@@ -25,13 +22,9 @@ char *_strstr(char *haystack, char *needle)
 			if (!*str)
 				return (NULL);
 
-			substr++;
-			str++;
-		} while (*str == *substr);
+		} while (*str++ == *substr++);
 
-		haystack++;
-
-	} while (*haystack);
+	} while (*haystack++);
 
 	return (NULL);
 }
