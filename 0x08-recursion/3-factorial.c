@@ -3,7 +3,7 @@
 /**
  * calcFactorial - does the math to calculate the factorial of an integer
  * @product: the factorial of `n`
- * @n: an integer
+ * @num: an integer
  *
  * Return: the factorial of `n`
  */
