@@ -24,9 +24,7 @@ int calcLength(char *str, int length)
 
 int _strlen_recursion(char *s)
 {
-	if (!s)
-		return (0);
-	else if (!*s)
+	if (!s || !*s)
 		return (0);
 	else
 		return (calcLength(s, 0));
