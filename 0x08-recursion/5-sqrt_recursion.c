@@ -1,5 +1,13 @@
 #include "holberton.h"
 
+/**
+ * calc_sqrt - recursive function to calculate the square root of an integer
+ * @n: an integer
+ * @root: a possible square root of n
+ *
+ * Return: the square root of `n` or -1 if it does not exist
+ */
+
 int calc_sqrt(int n, int root)
 {
 	if ((root * root) != n && (root * root) < n)
