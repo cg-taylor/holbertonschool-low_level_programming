@@ -1,6 +1,21 @@
 #include "holberton.h"
 
 /**
+ * calcLength - calculate the length of a string
+ * @str: a pointer to a string
+ * @length: the length of the string
+ *
+ * Return: the length of the string
+ */
+
+int calcLength(char *str, int length)
+{
+	if (*str)
+		return (calcLength(str + 1, length + 1));
+	return (length);
+}
+
+/**
  * compareFirstAndLastChar - compare the first and last characters in a string
  * @str: pointer to the string to test
  * @length: the length of the string
@@ -32,8 +47,7 @@ int is_palindrome(char *s)
 	if (!*s)
 		return (1);
 
-	for (length = 0; s[length]; length++)
-		;
-	length--;
+	length = calcLength(s, 0);
+
 	return (compareFirstAndLastChar(s, length, 0));
 }
