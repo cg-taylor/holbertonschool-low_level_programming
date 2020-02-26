@@ -29,7 +29,7 @@ int compareFirstAndLastChar(char *str, int length, int idx)
 	if (str[idx] != str[length])
 		return (0);
 	else if (idx < length)
-		return (compareFirstAndLastChar(str, --length, ++idx));
+		return (compareFirstAndLastChar(str, length - 1, idx + 1));
 	return (1);
 }
 
@@ -46,6 +46,8 @@ int is_palindrome(char *s)
 
 	if (!*s)
 		return (1);
+	else if (!s)
+		return (0);
 
 	length = calcLength(s, 0);
 
