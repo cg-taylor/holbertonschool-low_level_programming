@@ -20,7 +20,7 @@ int findPrime(int num, int max, int factor)
 
 /**
  * is_prime_number - determines if an integer is prime
- * @n - an integer
+ * @n: an integer
  *
  * Return: 1 if `n` if prime, 0 if it is not
  */
