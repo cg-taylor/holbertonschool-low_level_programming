@@ -5,8 +5,8 @@
  * @min: the number to start filling the array from
  * @max: the last number to store in the array
  *
- * Description: The array contains all values from `min` to `max` (inclusive) in
- *              numerical order.
+ * Description: The array contains all values from `min` to `max` (inclusive)
+ *              in numerical order.
  *
  * Return: pointer to the new array or NULL if it fails
  */
