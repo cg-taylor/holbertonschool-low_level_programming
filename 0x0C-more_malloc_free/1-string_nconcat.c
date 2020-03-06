@@ -46,26 +46,20 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (n > length2)
 		n = length2;
 
-/* Extra byte for the null terminator is included in length1 */
-	total_length = length1 + n;
+	total_length = length1 + n + 1;
 
 	new = malloc(sizeof(char) * total_length);
 
 	if (!new)
 		return (NULL);
 
-	for (i = 0; i < total_length; i++)
+	for (i = 0; *s1; i++, s1++)
 	{
-		if (i < length1 && *s1)
-		{
-			new[i] = *s1;
-			s1++;
-		}
-		else
-		{
-			new[i] = *s2;
-			s2++;
-		}
+		new[i] = *s1;
+	}
+	for ( ; n > 0; i++, n--, s2++)
+	{
+		new[i] = *s2;
 	}
 	new[i] = '\0';
 
