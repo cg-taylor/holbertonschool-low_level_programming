@@ -43,10 +43,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	length1 = _strlen(s1);
 	length2 = _strlen(s2);
 
-/*
- * If n >= length2, then change to n = length2 so that we don't continue adding
- * random unknown characters to the new string
- */
 	if (n > length2)
 		n = length2;
 
