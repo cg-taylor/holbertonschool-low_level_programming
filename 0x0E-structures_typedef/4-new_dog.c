@@ -28,9 +28,7 @@ int _strlen(char *str)
 
 char *_strcpy(char *dest, char *src)
 {
-	int idx, length;
-
-	length = _strlen(src);
+	int idx;
 
 	for (idx = 0; src[idx]; idx++)
 		dest[idx] = src[idx];
@@ -51,7 +49,7 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog = NULL;
+	dog_t *new_dog;
 
 	if (!name || !owner)
 		return (NULL);
