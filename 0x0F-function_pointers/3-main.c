@@ -14,9 +14,9 @@
 int main(int argc, char **argv)
 {
 	int num1, num2, result;
-	char *operator;
 	int (*op_func)(int, int);
 
+	/* check number of arguments */
 	if (argc != 4)
 	{
 		printf("Error\n");
@@ -25,15 +25,8 @@ int main(int argc, char **argv)
 
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
-	operator = argv[2];
 
-	op_func = get_op_func(operator);
-
-	if (!op_func)
-	{
-		printf("Error\n");
-		exit(99);
-	}
+	op_func = get_op_func(argv[2]);
 
 	result = op_func(num1, num2);
 
