@@ -22,18 +22,27 @@ int _strlen(char *str)
  * @head: double pointer to the head of a singly linked list
  * @str: the contents of the new node
  *
- * Return: pointer to the new element
+ * Return: pointer to the new element or NULL if it fails
  */
 
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new;
 
+	if (!str)
+		return (NULL);
+
 	new = malloc(sizeof(list_t));
-	if (!new || !str)
+	if (!new)
 		return (NULL);
 
 	new->str = strdup(str);
+	if(!(new->str))
+	{
+		free(new);
+		return (NULL);
+	}
+
 	new->len = _strlen(new->str);
 	new->next = *head;
 	*head = new;
