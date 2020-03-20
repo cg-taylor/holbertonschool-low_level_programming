@@ -27,7 +27,7 @@ int _strlen(char *str)
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new, *last;;
+	list_t *new, *last;
 
 	if (!str)
 		return (NULL);
