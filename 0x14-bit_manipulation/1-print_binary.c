@@ -20,7 +20,6 @@ void _print_binary(unsigned long int n)
 		if (n & 1)
 			_putchar('1');
 	}
-	return;
 }
 
 /**
