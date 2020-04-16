@@ -12,7 +12,7 @@ int main(int ac, char **av)
 {
 	int num1, num2, product;
 
-	if (ac > 3)
+	if (ac != 3)
 	{
 		printf("Error\n");
 		return (1);
