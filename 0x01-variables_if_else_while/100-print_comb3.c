@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -17,8 +18,8 @@ int main(void)
 		{
 			if (b > a)
 			{
-				putchar(48 + a);
-				putchar(48 + b);
+				putchar('0' + a);
+				putchar('0' + b);
 				if (a != 8 || b != 9)
 				{
 					putchar(',');
