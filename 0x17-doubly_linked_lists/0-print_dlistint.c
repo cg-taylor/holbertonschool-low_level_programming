@@ -17,7 +17,7 @@ size_t print_dlistint(const dlistint_t *h)
 /* Make sure h is pointing to the first node */
 	if (h->prev != NULL)
 	{
-		while(h->prev)
+		while (h->prev)
 			h = h->prev;
 	}
 
